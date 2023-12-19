@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+
+    <style>
+
+        .nav{
+            display: flex;
+            align-items: center;
+            background-color: #ffff7f;
+        }
+
+        .navbar{
+            display: flex;
+            list-style-type: none;
+            flex-direction: row;
+        }
+        .navbarItem{
+        	width: 150px;
+        }
+
+        .navbar a{
+            text-decoration: none;
+            color: brown;
+        }
+
+        .dropdown{
+            position: relative;
+        }
+        .dropdownContents{
+            list-style: none;
+            display: none;
+            position: absolute; top: 15px;
+            background-color: #ffff7f;
+            padding: 10px;
+            min-width: 50px;
+            border-radius: 10px;
+        }
+
+        input[type=checkbox]{
+            display: none;
+        }
+
+        .dropdownContents li+li{
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .dropdown:hover .dropdownContents{
+            display: block;
+        }
+
+        @media only screen and (max-width: 768px){
+
+    	.navbar{
+        	display: none;
+        	position: absolute;
+        	top: 60px;
+        	background-color: #ffff7f;
+        	padding-bottom: 20px;padding-top: 20px;
+    	}
+    
+    	.navbar li+li{
+        	padding-top: 12px;
+    	}
+    	
+    	.toggler_icon{
+        	display: block;
+   		}
+    
+    	.nav{
+        	justify-content: space-between;
+        	padding-left: 20px; padding-right: 20px;
+    	}
+    	
+    	input[type=checkbox]:checked ~ .navbar{
+        	display: block;
+    	}
+    	
+    	.nav{display: block;}
+    	
+    	.nav{
+        	flex-direction: column;
+    	}
+    	
+    	.nav img{padding-top: 25px;}
+    
+    	.navbar{
+        	flex-direction: column;
+    	}
+    
+    	.navbar li+li{
+        	margin-top: 20px;
+    	}
+    	}
+    	
+        input[type=checkbox]{
+            display: none;
+        }
+
+        .toggler_icon{
+            display: none;
+            font-size: 25px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="nav">
+            <img src="image/pic.jpg" width="70px" length="70px">
+            <input type="checkbox" id="checkbox_toggle">
+            <label for="checkbox_toggle" class="toggler_icon">&#9776;</label>
+        	<ul class="navbar">
+            <li class="navbarItem"><a href="#">Home</a></li>
+            <li class="navbarItem"><a href="#">News</a></li>
+            <li class="navbarItem dropdown"><a href="#">Service</a>
+                <ul class="dropdownContents">
+                    <li><a href="#">Service 1</a></li>
+                    <li><a href="#">Service 2</a></li>
+                    <li><a href="#">Service 3</a></li>
+                </ul>
+            </li>
+            <li class="navbarItem"><a href="#">About Us</a></li>
+        </ul>
+        </header>
+
+    </div>
+
+</body>
+</html>
